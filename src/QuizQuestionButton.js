@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import './App.css'
 
 class QuizQuestionButton extends Component {
+  handleClick() {
+    this.props.clickHandler(this.props.button_text)
+  }
   render() {
     return (
-	<ul>
-   <li>
-   <button>{this.props.button_text}</button>
-   </li>
-   </ul>
+      <li>
+        <button onClick={this.handleClick.bind(this)}>{this.props.button_text}</button>
+      </li>
     )
   }
 }
